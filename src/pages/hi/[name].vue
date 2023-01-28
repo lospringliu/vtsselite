@@ -1,24 +1,46 @@
 <script setup lang="ts">
 const props = defineProps<{ name: string }>()
 const router = useRouter()
+const user = useUserStore()
+const { t } = useI18n()
+
+watchEffect(() => {
+  user.setNewName(props.name)
+})
 </script>
 
 <template>
   <div>
-    <div i-carbon-pedestrian text-4xl inline-block />
+    <div text-4xl>
+      <div i-carbon-pedestrian inline-block />
+    </div>
     <p>
-      Hi, {{ props.name }}
+      {{ t('intro.hi', { name: props.name }) }}
     </p>
-    <p text-sm op50>
-      <em>Dynamic route!</em>
+
+    <p text-sm opacity-75>
+      <em>{{ t('intro.dynamic-route') }}</em>
     </p>
+
+    <template v-if="user.otherNames.length">
+      <p text-sm mt-4>
+        <span opacity-75>{{ t('intro.aka') }}:</span>
+        <ul>
+          <li v-for="otherName in user.otherNames" :key="otherName">
+            <RouterLink :to="`/hi/${otherName}`" replace>
+              {{ otherName }}
+            </RouterLink>
+          </li>
+        </ul>
+      </p>
+    </template>
 
     <div>
       <button
-        class="btn m-3 text-sm mt-8"
+        btn m="3 t6" text-sm
         @click="router.back()"
       >
-        Back
+        {{ t('button.back') }}
       </button>
     </div>
   </div>
