@@ -1,0 +1,142 @@
+button:
+  about: About
+  back: Back
+  go: GO
+  home: Home
+  toggle_dark: Toggle dark mode
+  toggle_langs: Change languages
+  info: Information
+  settings: Settings
+  reload: Reload
+  close: Close
+  playlist: Play List
+  tools: Tools
+  social: Social
+  relays: Relay
+  graph: Graph
+intro:
+  desc: Opinionated Vite Starter Template
+  dynamic-route: Demo of dynamic route
+  hi: Hi, {name}!
+  aka: Also known as
+  whats-your-name: What's your name?
+not-found: Not found
+moi: Mine
+tags:
+  posts: Posts
+vupload:
+  no_search_result: No results. Try other file name
+  ipfs_list: List of files that you upload will appear here
+  uploading: files being transfered
+  prompt: Drop files here or click to select files
+customize:
+  chat_title: Private Chats
+wallets:
+  not_activated: Not Activated
+  balance: Balance
+  tokens: Tokens
+  login_first: Login First
+pages:
+  prompt_offline: App ready to work offline
+  prompt_reload: New content available, click on reload button to update
+  videos: Videos
+  space: Space
+  spaces: Spaces
+  space_description: 2D Meeting space
+  posts: Posts
+  posts_description: Immutable Publications
+  rooms: Rooms
+  rooms_description: Open data collections
+  chats: Chats
+  dicts: Dictionary
+  gifts: Gifts
+  projects: Projects
+  users: Users
+  youtube_access: Have Youtube access
+  youtube_per_query: Records return per API query
+  youtube_playback_rate: Playback rate
+  ipfs_gateway: IPFS Gateway
+  topics: Topics
+gunvue:
+  user_users_list: Users list
+  user_room_join: Join
+  relay_host: Host
+  relay_set: Set
+  relay_reset: Reset
+  backlinks: Backlinks
+  cred_saved: Ive stored my key securely
+  features: Features
+  form_text_hint: Main text content (with **markdown** support)
+  form_add_to_post: Save
+  post_feed_search: Search for a feed
+  create_profile_field: New profile field
+  go_homepage: My public profile
+  login_for_message: Log in to post messages
+  or: or
+  share: Share
+  add: Add
+  add2: Add
+  upload: Upload
+  download: Download
+  download2: Download
+  visibility: Show hidden
+  view: View
+  send: Send
+  enter: Enter
+  renew: Renew
+  leave: Leave
+  submit: Submit
+  load: Load
+  reset: Reset
+  reset2: Reset
+  post_title: Title
+  post_title_add: Add a heading
+  post_statement: Short text statement
+  chat_chats: Chats
+  chat_new: New chat
+  space_enter: Click here to join the space
+  room_room: ROOM
+  room_new_name: New room name
+  room_add: Add room
+  room_generate: Generate a new room
+  room_browse: Browse rooms
+  room_hosts: Hosts
+  util_copy: Copy
+  util_copied: Copied
+  reactions: Reactions
+  my_rooms: My rooms
+  save_keys: Please make sure to safely store your cryptographic keypair to be able to use it again later
+  already_account: I already have an account
+  login_saved_key: Login with a saved key
+  your_message: Your message
+  paste_keys: Paste your key pair here
+  login_paste: Paste
+  stars: Stars
+  cred_keypair: Key Pair
+  cred_qr: QR
+  cred_share: Share
+  cred_link: Link
+  cred_text: Text
+  cred_json: JSON
+  form_link: Add a link
+  form_link_url: Paste a URL
+  form_ipfs: Add a ipfs video
+  form_ipfs_video: Paste a ipfs video link
+  form_youtube: Add a youtube video
+  form_youtube_video: Paste a Youtube video link
+  login_qr: QR
+  login_json: JSON
+  create_account: Create a new account
+  refresh_keys: Tap the circle to generate a new key
+  enter_alias: Enter your name or nickname
+  authenticate: Authenticate
+  enter_enc_pass: Enter a passphrase to encrypt your key with
+  enter_password: Enter the password
+  set_enc_pass: Set
+  show_enc_pass: Show
+  mates: Friends
+  my_mates: My friends
+  encrypted: Encrypted
+  plaintext: Plain Text
+  my_wallets: My wallets
+  add_wallet: Add a wallet
