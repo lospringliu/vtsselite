@@ -173,4 +173,23 @@ export default defineConfig({
     ],
   },
   base: './',
+  build: {
+    target: 'esnext',
+    minify: !process.env.TAURI_DEBUG ? 'esbuild' : false,
+    sourcemap: !!process.env.TAURI_DEBUG,
+    brotliSize: true,
+    assetsInlineLimit: 100000000,
+    chunkSizeWarningLimit: 100000000,
+    cssCodeSplit: false,
+    external: ['vue'],
+    rollupOptions: {
+      output: {
+        minifyInternalExports: false,
+        inlineDynamicImports: true,
+        globals: {
+          vue: 'Vue',
+        },
+      },
+    },
+  },
 })
