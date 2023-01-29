@@ -48,7 +48,7 @@ function removeAvatar() {
     )
 
   form-picture.absolute(
-    v-if="user.wallets.jingtum?.activated"
+    v-if="user.wallets?.jingtum?.activated"
     :options="{ picSize: props.pic, preserveRatio: false }"
     @update="uploadAvatar($event)"
     )

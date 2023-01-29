@@ -67,7 +67,7 @@ export function usePrivateChat(pub: string, { parse = true } = {}) {
     const work = await SEA.work(secret, undefined, undefined, { salt: today })
     const enc = await SEA.encrypt(toSend, work)
 
-    //@ts-ignore - Incorrect GUN typings
+    //@ts-expect-error - Incorrect gun.set() typings
     gun.user().get('chat').get(pub).get(today).set(enc)
   }
 

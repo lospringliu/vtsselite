@@ -8,14 +8,9 @@ declare global {
   const $ref: typeof import('vue/macros')['$ref']
   const $shallowRef: typeof import('vue/macros')['$shallowRef']
   const $toRef: typeof import('vue/macros')['$toRef']
+  const CHANNELS: typeof import('./src/stores/channels_playlists')['CHANNELS']
   const EffectScope: typeof import('vue')['EffectScope']
-  const GUN_BASE: typeof import('./src/composables/gun')['GUN_BASE']
-  const NOW: typeof import('./src/composables/params')['NOW']
-  const PEER: typeof import('./src/composables/params')['PEER']
-  const USERS: typeof import('./src/composables/params')['USERS']
-  const USERS_LIST: typeof import('./src/composables/params')['USERS_LIST']
-  const YEAR: typeof import('./src/composables/params')['YEAR']
-  const additional_weeks_shown: typeof import('./src/composables/params')['additional_weeks_shown']
+  const PLAYLISTS: typeof import('./src/stores/channels_playlists')['PLAYLISTS']
   const asyncComputed: typeof import('@vueuse/core')['asyncComputed']
   const autoResetRef: typeof import('@vueuse/core')['autoResetRef']
   const chains: typeof import('./src/composables/chains')['chains']
@@ -44,15 +39,17 @@ declare global {
   const eagerComputed: typeof import('@vueuse/core')['eagerComputed']
   const effectScope: typeof import('vue')['effectScope']
   const extendRef: typeof import('@vueuse/core')['extendRef']
+  const featured: typeof import('./src/stores/index')['featured']
+  const filtering: typeof import('./src/stores/index')['filtering']
   const getCurrentInstance: typeof import('vue')['getCurrentInstance']
   const getCurrentScope: typeof import('vue')['getCurrentScope']
-  const gun: typeof import('./src/composables/gun')['gun']
-  const gun_init: typeof import('./src/composables/gun')['gun_init']
+  const globalState: typeof import('./src/stores/globalState')['globalState']
   const h: typeof import('vue')['h']
   const ignorableWatch: typeof import('@vueuse/core')['ignorableWatch']
   const initChannels: typeof import('./src/composables/useVideos')['initChannels']
   const initVideos: typeof import('./src/composables/useVideos')['initVideos']
   const inject: typeof import('vue')['inject']
+  const ipfsStore: typeof import('./src/stores/index')['ipfsStore']
   const isDark: typeof import('./src/composables/dark')['isDark']
   const isDefined: typeof import('@vueuse/core')['isDefined']
   const isProxy: typeof import('vue')['isProxy']
@@ -82,7 +79,12 @@ declare global {
   const onUnmounted: typeof import('vue')['onUnmounted']
   const onUpdated: typeof import('vue')['onUpdated']
   const pausableWatch: typeof import('@vueuse/core')['pausableWatch']
+  const pinia: typeof import('./src/stores/index')['pinia']
+  const playing: typeof import('./src/stores/index')['playing']
+  const playingInList: typeof import('./src/stores/index')['playingInList']
+  const playlist: typeof import('./src/stores/index')['playlist']
   const preferredDark: typeof import('./src/composables/dark')['preferredDark']
+  const prefers: typeof import('./src/stores/index')['prefers']
   const provide: typeof import('vue')['provide']
   const put_channel: typeof import('./src/composables/useVideos')['put_channel']
   const put_video: typeof import('./src/composables/useVideos')['put_video']
@@ -185,6 +187,7 @@ declare global {
   const useFetch: typeof import('@vueuse/core')['useFetch']
   const useFileDialog: typeof import('@vueuse/core')['useFileDialog']
   const useFileSystemAccess: typeof import('@vueuse/core')['useFileSystemAccess']
+  const useFilteringStore: typeof import('./src/stores/useFilteringStore')['useFilteringStore']
   const useFocus: typeof import('@vueuse/core')['useFocus']
   const useFocusWithin: typeof import('@vueuse/core')['useFocusWithin']
   const useFps: typeof import('@vueuse/core')['useFps']
@@ -200,6 +203,7 @@ declare global {
   const useInterval: typeof import('@vueuse/core')['useInterval']
   const useIntervalFn: typeof import('@vueuse/core')['useIntervalFn']
   const useIpfsNode: typeof import('./src/composables/useIpfsNode')['default']
+  const useIpfsStore: typeof import('./src/stores/useIpfsStore')['useIpfsStore']
   const useKeyModifier: typeof import('@vueuse/core')['useKeyModifier']
   const useLastChanged: typeof import('@vueuse/core')['useLastChanged']
   const useLink: typeof import('vue-router')['useLink']
@@ -224,6 +228,9 @@ declare global {
   const usePageLeave: typeof import('@vueuse/core')['usePageLeave']
   const useParallax: typeof import('@vueuse/core')['useParallax']
   const usePermission: typeof import('@vueuse/core')['usePermission']
+  const usePlayingInListStore: typeof import('./src/stores/usePlayingInListStore')['usePlayingInListStore']
+  const usePlayingStore: typeof import('./src/stores/usePlayingStore')['usePlayingStore']
+  const usePlaylistStore: typeof import('./src/stores/usePlaylistStore')['usePlaylistStore']
   const usePointer: typeof import('@vueuse/core')['usePointer']
   const usePointerLock: typeof import('@vueuse/core')['usePointerLock']
   const usePointerSwipe: typeof import('@vueuse/core')['usePointerSwipe']
@@ -232,6 +239,7 @@ declare global {
   const usePreferredDark: typeof import('@vueuse/core')['usePreferredDark']
   const usePreferredLanguages: typeof import('@vueuse/core')['usePreferredLanguages']
   const usePreferredReducedMotion: typeof import('@vueuse/core')['usePreferredReducedMotion']
+  const usePrefersStore: typeof import('./src/stores/usePrefersStore')['usePrefersStore']
   const useRafFn: typeof import('@vueuse/core')['useRafFn']
   const useRefHistory: typeof import('@vueuse/core')['useRefHistory']
   const useResizeObserver: typeof import('@vueuse/core')['useResizeObserver']
@@ -251,6 +259,7 @@ declare global {
   const useStepper: typeof import('@vueuse/core')['useStepper']
   const useStorage: typeof import('@vueuse/core')['useStorage']
   const useStorageAsync: typeof import('@vueuse/core')['useStorageAsync']
+  const useStore: typeof import('./src/stores/useStore')['useStore']
   const useStyleTag: typeof import('@vueuse/core')['useStyleTag']
   const useSupported: typeof import('@vueuse/core')['useSupported']
   const useSwipe: typeof import('@vueuse/core')['useSwipe']
@@ -273,10 +282,13 @@ declare global {
   const useTransition: typeof import('@vueuse/core')['useTransition']
   const useUrlSearchParams: typeof import('@vueuse/core')['useUrlSearchParams']
   const useUserMedia: typeof import('@vueuse/core')['useUserMedia']
+  const useUserStore: typeof import('./src/stores/user')['useUserStore']
   const useVModel: typeof import('@vueuse/core')['useVModel']
   const useVModels: typeof import('@vueuse/core')['useVModels']
   const useVibrate: typeof import('@vueuse/core')['useVibrate']
+  const useVideoFeaturedStore: typeof import('./src/stores/useVideoFeaturedStore')['useVideoFeaturedStore']
   const useVideoSearch: typeof import('./src/composables/useVideoSearch')['default']
+  const useVideoStore: typeof import('./src/stores/useVideoStore')['useVideoStore']
   const useVideos: typeof import('./src/composables/useVideos')['useVideos']
   const useVirtualList: typeof import('@vueuse/core')['useVirtualList']
   const useWakeLock: typeof import('@vueuse/core')['useWakeLock']
@@ -290,7 +302,7 @@ declare global {
   const useWindowScroll: typeof import('@vueuse/core')['useWindowScroll']
   const useWindowSize: typeof import('@vueuse/core')['useWindowSize']
   const useYoutubeVideos: typeof import('./src/composables/useYoutubeVideos')['default']
-  const users_init: typeof import('./src/composables/gun')['users_init']
+  const videos: typeof import('./src/stores/index')['videos']
   const watch: typeof import('vue')['watch']
   const watchArray: typeof import('@vueuse/core')['watchArray']
   const watchAtMost: typeof import('@vueuse/core')['watchAtMost']
@@ -317,14 +329,9 @@ declare module 'vue' {
     readonly $ref: UnwrapRef<typeof import('vue/macros')['$ref']>
     readonly $shallowRef: UnwrapRef<typeof import('vue/macros')['$shallowRef']>
     readonly $toRef: UnwrapRef<typeof import('vue/macros')['$toRef']>
+    readonly CHANNELS: UnwrapRef<typeof import('./src/stores/channels_playlists')['CHANNELS']>
     readonly EffectScope: UnwrapRef<typeof import('vue')['EffectScope']>
-    readonly GUN_BASE: UnwrapRef<typeof import('./src/composables/gun')['GUN_BASE']>
-    readonly NOW: UnwrapRef<typeof import('./src/composables/params')['NOW']>
-    readonly PEER: UnwrapRef<typeof import('./src/composables/params')['PEER']>
-    readonly USERS: UnwrapRef<typeof import('./src/composables/params')['USERS']>
-    readonly USERS_LIST: UnwrapRef<typeof import('./src/composables/params')['USERS_LIST']>
-    readonly YEAR: UnwrapRef<typeof import('./src/composables/params')['YEAR']>
-    readonly additional_weeks_shown: UnwrapRef<typeof import('./src/composables/params')['additional_weeks_shown']>
+    readonly PLAYLISTS: UnwrapRef<typeof import('./src/stores/channels_playlists')['PLAYLISTS']>
     readonly asyncComputed: UnwrapRef<typeof import('@vueuse/core')['asyncComputed']>
     readonly autoResetRef: UnwrapRef<typeof import('@vueuse/core')['autoResetRef']>
     readonly chains: UnwrapRef<typeof import('./src/composables/chains')['chains']>
@@ -353,15 +360,17 @@ declare module 'vue' {
     readonly eagerComputed: UnwrapRef<typeof import('@vueuse/core')['eagerComputed']>
     readonly effectScope: UnwrapRef<typeof import('vue')['effectScope']>
     readonly extendRef: UnwrapRef<typeof import('@vueuse/core')['extendRef']>
+    readonly featured: UnwrapRef<typeof import('./src/stores/index')['featured']>
+    readonly filtering: UnwrapRef<typeof import('./src/stores/index')['filtering']>
     readonly getCurrentInstance: UnwrapRef<typeof import('vue')['getCurrentInstance']>
     readonly getCurrentScope: UnwrapRef<typeof import('vue')['getCurrentScope']>
-    readonly gun: UnwrapRef<typeof import('./src/composables/gun')['gun']>
-    readonly gun_init: UnwrapRef<typeof import('./src/composables/gun')['gun_init']>
+    readonly globalState: UnwrapRef<typeof import('./src/stores/globalState')['globalState']>
     readonly h: UnwrapRef<typeof import('vue')['h']>
     readonly ignorableWatch: UnwrapRef<typeof import('@vueuse/core')['ignorableWatch']>
     readonly initChannels: UnwrapRef<typeof import('./src/composables/useVideos')['initChannels']>
     readonly initVideos: UnwrapRef<typeof import('./src/composables/useVideos')['initVideos']>
     readonly inject: UnwrapRef<typeof import('vue')['inject']>
+    readonly ipfsStore: UnwrapRef<typeof import('./src/stores/index')['ipfsStore']>
     readonly isDark: UnwrapRef<typeof import('./src/composables/dark')['isDark']>
     readonly isDefined: UnwrapRef<typeof import('@vueuse/core')['isDefined']>
     readonly isProxy: UnwrapRef<typeof import('vue')['isProxy']>
@@ -391,7 +400,12 @@ declare module 'vue' {
     readonly onUnmounted: UnwrapRef<typeof import('vue')['onUnmounted']>
     readonly onUpdated: UnwrapRef<typeof import('vue')['onUpdated']>
     readonly pausableWatch: UnwrapRef<typeof import('@vueuse/core')['pausableWatch']>
+    readonly pinia: UnwrapRef<typeof import('./src/stores/index')['pinia']>
+    readonly playing: UnwrapRef<typeof import('./src/stores/index')['playing']>
+    readonly playingInList: UnwrapRef<typeof import('./src/stores/index')['playingInList']>
+    readonly playlist: UnwrapRef<typeof import('./src/stores/index')['playlist']>
     readonly preferredDark: UnwrapRef<typeof import('./src/composables/dark')['preferredDark']>
+    readonly prefers: UnwrapRef<typeof import('./src/stores/index')['prefers']>
     readonly provide: UnwrapRef<typeof import('vue')['provide']>
     readonly put_channel: UnwrapRef<typeof import('./src/composables/useVideos')['put_channel']>
     readonly put_video: UnwrapRef<typeof import('./src/composables/useVideos')['put_video']>
@@ -494,6 +508,7 @@ declare module 'vue' {
     readonly useFetch: UnwrapRef<typeof import('@vueuse/core')['useFetch']>
     readonly useFileDialog: UnwrapRef<typeof import('@vueuse/core')['useFileDialog']>
     readonly useFileSystemAccess: UnwrapRef<typeof import('@vueuse/core')['useFileSystemAccess']>
+    readonly useFilteringStore: UnwrapRef<typeof import('./src/stores/useFilteringStore')['useFilteringStore']>
     readonly useFocus: UnwrapRef<typeof import('@vueuse/core')['useFocus']>
     readonly useFocusWithin: UnwrapRef<typeof import('@vueuse/core')['useFocusWithin']>
     readonly useFps: UnwrapRef<typeof import('@vueuse/core')['useFps']>
@@ -509,6 +524,7 @@ declare module 'vue' {
     readonly useInterval: UnwrapRef<typeof import('@vueuse/core')['useInterval']>
     readonly useIntervalFn: UnwrapRef<typeof import('@vueuse/core')['useIntervalFn']>
     readonly useIpfsNode: UnwrapRef<typeof import('./src/composables/useIpfsNode')['default']>
+    readonly useIpfsStore: UnwrapRef<typeof import('./src/stores/useIpfsStore')['useIpfsStore']>
     readonly useKeyModifier: UnwrapRef<typeof import('@vueuse/core')['useKeyModifier']>
     readonly useLastChanged: UnwrapRef<typeof import('@vueuse/core')['useLastChanged']>
     readonly useLink: UnwrapRef<typeof import('vue-router')['useLink']>
@@ -533,6 +549,9 @@ declare module 'vue' {
     readonly usePageLeave: UnwrapRef<typeof import('@vueuse/core')['usePageLeave']>
     readonly useParallax: UnwrapRef<typeof import('@vueuse/core')['useParallax']>
     readonly usePermission: UnwrapRef<typeof import('@vueuse/core')['usePermission']>
+    readonly usePlayingInListStore: UnwrapRef<typeof import('./src/stores/usePlayingInListStore')['usePlayingInListStore']>
+    readonly usePlayingStore: UnwrapRef<typeof import('./src/stores/usePlayingStore')['usePlayingStore']>
+    readonly usePlaylistStore: UnwrapRef<typeof import('./src/stores/usePlaylistStore')['usePlaylistStore']>
     readonly usePointer: UnwrapRef<typeof import('@vueuse/core')['usePointer']>
     readonly usePointerLock: UnwrapRef<typeof import('@vueuse/core')['usePointerLock']>
     readonly usePointerSwipe: UnwrapRef<typeof import('@vueuse/core')['usePointerSwipe']>
@@ -541,6 +560,7 @@ declare module 'vue' {
     readonly usePreferredDark: UnwrapRef<typeof import('@vueuse/core')['usePreferredDark']>
     readonly usePreferredLanguages: UnwrapRef<typeof import('@vueuse/core')['usePreferredLanguages']>
     readonly usePreferredReducedMotion: UnwrapRef<typeof import('@vueuse/core')['usePreferredReducedMotion']>
+    readonly usePrefersStore: UnwrapRef<typeof import('./src/stores/usePrefersStore')['usePrefersStore']>
     readonly useRafFn: UnwrapRef<typeof import('@vueuse/core')['useRafFn']>
     readonly useRefHistory: UnwrapRef<typeof import('@vueuse/core')['useRefHistory']>
     readonly useResizeObserver: UnwrapRef<typeof import('@vueuse/core')['useResizeObserver']>
@@ -560,6 +580,7 @@ declare module 'vue' {
     readonly useStepper: UnwrapRef<typeof import('@vueuse/core')['useStepper']>
     readonly useStorage: UnwrapRef<typeof import('@vueuse/core')['useStorage']>
     readonly useStorageAsync: UnwrapRef<typeof import('@vueuse/core')['useStorageAsync']>
+    readonly useStore: UnwrapRef<typeof import('./src/stores/useStore')['useStore']>
     readonly useStyleTag: UnwrapRef<typeof import('@vueuse/core')['useStyleTag']>
     readonly useSupported: UnwrapRef<typeof import('@vueuse/core')['useSupported']>
     readonly useSwipe: UnwrapRef<typeof import('@vueuse/core')['useSwipe']>
@@ -582,10 +603,13 @@ declare module 'vue' {
     readonly useTransition: UnwrapRef<typeof import('@vueuse/core')['useTransition']>
     readonly useUrlSearchParams: UnwrapRef<typeof import('@vueuse/core')['useUrlSearchParams']>
     readonly useUserMedia: UnwrapRef<typeof import('@vueuse/core')['useUserMedia']>
+    readonly useUserStore: UnwrapRef<typeof import('./src/stores/user')['useUserStore']>
     readonly useVModel: UnwrapRef<typeof import('@vueuse/core')['useVModel']>
     readonly useVModels: UnwrapRef<typeof import('@vueuse/core')['useVModels']>
     readonly useVibrate: UnwrapRef<typeof import('@vueuse/core')['useVibrate']>
+    readonly useVideoFeaturedStore: UnwrapRef<typeof import('./src/stores/useVideoFeaturedStore')['useVideoFeaturedStore']>
     readonly useVideoSearch: UnwrapRef<typeof import('./src/composables/useVideoSearch')['default']>
+    readonly useVideoStore: UnwrapRef<typeof import('./src/stores/useVideoStore')['useVideoStore']>
     readonly useVideos: UnwrapRef<typeof import('./src/composables/useVideos')['useVideos']>
     readonly useVirtualList: UnwrapRef<typeof import('@vueuse/core')['useVirtualList']>
     readonly useWakeLock: UnwrapRef<typeof import('@vueuse/core')['useWakeLock']>
@@ -599,7 +623,7 @@ declare module 'vue' {
     readonly useWindowScroll: UnwrapRef<typeof import('@vueuse/core')['useWindowScroll']>
     readonly useWindowSize: UnwrapRef<typeof import('@vueuse/core')['useWindowSize']>
     readonly useYoutubeVideos: UnwrapRef<typeof import('./src/composables/useYoutubeVideos')['default']>
-    readonly users_init: UnwrapRef<typeof import('./src/composables/gun')['users_init']>
+    readonly videos: UnwrapRef<typeof import('./src/stores/index')['videos']>
     readonly watch: UnwrapRef<typeof import('vue')['watch']>
     readonly watchArray: UnwrapRef<typeof import('@vueuse/core')['watchArray']>
     readonly watchAtMost: UnwrapRef<typeof import('@vueuse/core')['watchAtMost']>
