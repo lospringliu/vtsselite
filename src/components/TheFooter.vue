@@ -2,6 +2,7 @@
 import { useRoute } from 'vue-router'
 import { isDark, preferredDark, toggleDark } from '../composables/dark'
 import { playlist, prefers } from '../stores'
+import { currentRoom } from '#composables'
 const language = ref(null)
 const route = useRoute()
 const location_origin = ref(location.origin)
@@ -30,7 +31,15 @@ watch(show, (value, old_value) => {
 </script>
 
 <template>
-  <nav class="flex justify-around sm-px-8 md-px-16 lg-px-32 items-center text-center bg-cyan-300 text-xl py-0 mx-auto">
+  <nav class="flex justify-around sm-px-8 md-px-16 lg-px-32 items-center text-center bg-cyan-400 dark:bg-cyan-700 dark:text-gray-100 text-xl py-0 mx-auto">
+    <!--
+    <RoomButton
+      :key="currentRoom.pub" @room="$router.push(`/rooms/${$event}`)"
+      @rooms="$router.push(`/rooms/`)"
+      @browse="$router.push(`/${$event}/`)"
+    />
+    -->
+
     <RouterLink class="icon-btn" to="/" :title="t('button.home')">
       <div i-carbon-campsite />
     </RouterLink>

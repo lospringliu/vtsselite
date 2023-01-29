@@ -11,7 +11,7 @@ import '@unocss/reset/tailwind.css'
 // import './styles/main.css'
 import 'uno.css'
 import '#components/styles/index.css'
-import './styles/styles.scss'
+// import './styles/styles.scss'
 
 const routes = setupLayouts(generatedRoutes)
 const router = createRouter({
