@@ -106,6 +106,7 @@ export const user: User = reactive({
 		password: '',
 	},
 	db: undefined,
+	wallets: {jingtum: {chain: "jingtum"}, moac: {chain: "moac"}, ethereum: {chain: "ethereum"}},
 	pair(): ISEAPair {
 		//@ts-ignore
 		return gun?.user?.()?._?.sea;
@@ -152,18 +153,18 @@ function init() {
 		clearInterval(user.pulser);
 	}
 	gun.user()
-    .get("wallets")
-    .get("defaults")
-    .map()
-    .on((d, k) => {
-      if (d) {
-        delete d._
-        delete d["#"]
-        delete d[">"]
-        user.wallets[k] = d;
-      }
-    });
- user.pulser = setInterval(() => {
+		.get("wallets")
+		.get("defaults")
+		.map()
+		.on((d, k) => {
+			if (d) {
+				delete d._
+				delete d["#"]
+				delete d[">"]
+				user.wallets[k] = d;
+			}
+		});
+	user.pulser = setInterval(() => {
 		gun.user().get("pulse").put(Date.now());
 	}, 1000);
 
@@ -229,8 +230,8 @@ export function leave() {
 	let is = !!user.is?.pub;
 	user.initiated = false;
 	clearInterval(user.pulser);
-	  user.wallets = {jingtum: {chain: "jingtum"}, moac: {chain: "moac"}, ethereum: {chain: "ethereum"}};
-   gun.user().leave();
+	user.wallets = {jingtum: {chain: "jingtum"}, moac: {chain: "moac"}, ethereum: {chain: "ethereum"}};
+	gun.user().leave();
 	setTimeout(() => {
 		if (is && !user.pair()) {
 			user.is = null;

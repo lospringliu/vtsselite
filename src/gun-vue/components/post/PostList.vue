@@ -90,7 +90,7 @@ const { t } = useI18n()
           .i-la-eye-slash(v-else)
           .ml-2 {{ t('gunvue.visibility') }}
         button.button(
-          v-if="-1 > countPosts" 
+          v-if="countPosts > 0" 
           title="Download feed" 
           @click="downloadPosts()"
           )
