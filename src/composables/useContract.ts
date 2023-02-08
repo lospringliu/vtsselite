@@ -1,7 +1,7 @@
 import { chains } from "./chains"
 import axios from "axios"
 import { INftToken } from "../types"
-import { useGun } from "../gun-vue/composables"
+import { useGun } from "#composables"
 import { sleep } from "../api/utils"
 import AsyncForEach from "async-await-foreach"
 import isEqual from 'underscore/modules/isEqual.js'

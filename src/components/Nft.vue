@@ -1,14 +1,14 @@
 <script setup>
-import { useContract, useContracts } from '../composables/useContract'
+import { useContract, useContracts } from '../composables/useContract';
 
 const props = defineProps({
   standard: { type: String, default: 'erc721' },
   chain: { type: String, default: 'polygon' },
   address: { type: String, default: '0x67Baa8575168623822106dee880a2c63B0EBE705' },
   index: { type: Number, default: 1 },
-  list_tokens: { type: Boolean, default: false },
+  list_tokens: { type: Boolean, default: false}
 })
-const { contract, sync_contract, read_contract } = useContract(props.address, props.standard, props.chain)
+const {contract, sync_contract, read_contract} = useContract(props.address, props.standard, props.chain)
 useContracts().then(async () => {
   read_contract(contract)
 })
@@ -16,6 +16,7 @@ useContracts().then(async () => {
 const load_more = async () => {
   await sync_contract(contract)
 }
+
 </script>
 
 <template lang='pug'>

@@ -52,9 +52,6 @@ watch(show, (value, old_value) => {
       <div i-carbon-language />
     </a>
 
-    <RouterLink class="icon-btn" to="/about" :title="t('button.about')">
-      <div i-carbon-dicom-overlay />
-    </RouterLink>
 
     <button class="i-ph-gear" :title="t('button.settings')" @click="show.settings = !show.settings" />
     <button v-if="/localhost|127.0.0.1/.test(location_origin)" class="i-mdi-graph-outline" :title="t('button.graph')" @click="show.graph = !show.graph" />

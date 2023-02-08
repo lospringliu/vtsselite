@@ -1,17 +1,17 @@
 #!/bin/bash
 
-rm -fr src/gun-vue/*
+rm -fr src/gun-vue/*; mkdir -p src/gun-vue/composables src/gun-vue/components
 cp -av /Users/xcliu/tests/gun-vue/composables/src src/gun-vue/composables
-git checkout src/gun-vue/composables/room/rootRoom.js
+git checkout src/gun-vue/composables/src/room/rootRoom.json
 cp -av /Users/xcliu/tests/gun-vue/components/src src/gun-vue/components
-git checkout src/gun-vue/components/embed/EmbedIpfs.vue
-git checkout src/gun-vue/components/form/FormIpfs.vue
+git checkout src/gun-vue/components/src/embed/EmbedIpfs.vue
+git checkout src/gun-vue/components/src/form/FormIpfs.vue
 
-cat << ENDF >> src/gun-vue/components/form/index.js
+cat << ENDF >> src/gun-vue/components/src/form/index.js
 
 export { default as FormIpfs } from "./FormIpfs.vue";
 ENDF
-cat << ENDF >> src/gun-vue/components/embed/index.js
+cat << ENDF >> src/gun-vue/components/src/embed/index.js
 
 export { default as EmbedIpfs } from "./EmbedIpfs.vue";
 ENDF

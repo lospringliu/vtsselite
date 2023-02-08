@@ -1,7 +1,7 @@
 import { defineStore } from "pinia";
 import { sleep } from "../api/utils";
 import Storage from "../services/storageGun";
-import { useUser } from "../gun-vue/composables"
+import { useUser } from "../gun-vue/composables/src"
 
 const { user } = useUser()
 const transform = data => data.results.reduce((acc, result) => ({...acc, [result.cid]: result.file}), {})

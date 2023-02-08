@@ -1,4 +1,4 @@
-import { useUser } from "../gun-vue/composables"
+import { useUser } from "../gun-vue/composables/src"
 import { chains } from "./chains"
 const { user } = useUser()
 const user_is = computed(() => user.is)

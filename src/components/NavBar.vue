@@ -16,19 +16,19 @@ const color = useColor('light')
 <template lang="pug">
 .flex.flex-col.z-400#titlebar
   a.fixed.top-0.left-0.z-1000(href="/#")
-    img.w-24.transition-all.duration-500.ease-in-out(src="/gun-vue-logo.svg")
+    img.w-24.transition-all.duration-500.ease-in-out(src="/media/gun-vue-logo.svg")
   .flex.items-center.z-40.gap-2.p-2.bg-light-900.shadow-xl.w-full.bg-cover( 
     data-tauri-drag-region="true"
     :style="{ ...bg }"
     )
-
-    .flex-auto
-    util-tools
     room-button(
       @room="$router.push(`/rooms/${$event}`)" @rooms="$router.push(`/rooms/`)"
       @browse="$router.push(`/${$event}/`)" 
       :key="currentRoom.pub"
       )
+    .flex-auto
+    util-tools
+
 
     user-icon(
       :size="40"

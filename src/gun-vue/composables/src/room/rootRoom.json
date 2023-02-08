@@ -1,0 +1,20 @@
+{
+  "pub": "ESE_kchm5HkrbE-GGvjLrhtPgHayD7fcLjY0JN78m4I.N1xV8gPJI_lkkLhNXhO2_kSP1gHYeNsdHoax0D_0wLM",
+  "hosts": {
+    "fKZETEg54aae_IGqa-jI9kUmn-IpA1l7p9p3T8WXn6A.UrL9g3aMVqItic3eXTaiSup0dka198E6oaz627gQwMw": {
+      "enc": "SEA{\"ct\":\"ZqYVsLSkGYB7RUT1tbQ3QIOZ2EmypqLrx0XLQTSkomHRS+nqDsticdqbJYFm9xV67+dZvhdOJTtB/lKlyCoKUqh4bFUxJWRm9JjFN+60JqA8kF8RmXITfGlKBG7mPtpqv8wbVXoIXxGzoHCleoA6AIx46AnaoZ9i+poZ4Tiq2yPNg+McNwYWCbe9zoju+8a+o9NQVQGyb0pF6LQY0DNoV6M0yvQDoxoG2vXFkIw8fWIpqRmALtd6avpzNr+D7OxnZ74exCQLo0V+sFJb4rgyenzM2rM3R3xfJG+U0yRQLZSuc7PEBNaKFpJBeJvkepDSL4G24fbYInOxQSA7HPSPUnXF9bT6xz59n5zOru57J7ZEfvtINBtgiN60cRD4XboZo6v6hG8PHpQswu3Xte2X4sLcN8a81u04Vct8c/4=\",\"iv\":\"gDZO9CJAHyNnYFw4goco\",\"s\":\"8gn3obLvBZ/u\"}",
+      "profile": "SEA{\"m\":{\"c\":\"fKZETEg54aae_IGqa-jI9kUmn-IpA1l7p9p3T8WXn6A.UrL9g3aMVqItic3eXTaiSup0dka198E6oaz627gQwMw\",\"w\":{\"*\":\"profile\"}},\"s\":\"jOR/saitonq7DrUp895L4wrKfWSMKFQjlxCorin1tgfObHPRdWeWThSV5zzBfiHQC6/oiWi99to4uqCu4cTLlg==\"}",
+      "features": "SEA{\"m\":{\"c\":\"fKZETEg54aae_IGqa-jI9kUmn-IpA1l7p9p3T8WXn6A.UrL9g3aMVqItic3eXTaiSup0dka198E6oaz627gQwMw\",\"w\":{\"*\":\"features\"}},\"s\":\"3u52DJ0gjY5biDewrQ92cGnxTJ1+vBn6eZdIRiH0pyBnYDtEZ55n9d2yP02gVQeF7VBWSqicmicBgR2wSp5FgQ==\"}",
+      "hosts": "SEA{\"m\":{\"c\":\"fKZETEg54aae_IGqa-jI9kUmn-IpA1l7p9p3T8WXn6A.UrL9g3aMVqItic3eXTaiSup0dka198E6oaz627gQwMw\",\"w\":{\"*\":\"hosts\"}},\"s\":\"Q20pwPmmyto3q7bxltmkh5Am+RwAmOkS/xfHIcSoxyje3sK2K+I79B/D5FGm1tmTa5eufa/i87PoJ5nGc3B6vA==\"}"
+    }
+  },
+  "features": {
+    "rooms": "SEA{\"m\":{\"c\":\"*\",\"w\":{\"*\":\"rooms\",\"+\":\"*\"}},\"s\":\"q6b4WoNOgsiEv2K8SZqlyB1cxbQ6k/MAb48a7rW3q9i0ruT/p2VMNW9j5HJpMC5Wsb9PHsbeR6XqW/STUFX2+A==\"}",
+    "space": "SEA{\"m\":{\"c\":\"*\",\"w\":{\"*\":\"space\",\"+\":\"*\"}},\"s\":\"XlsZ4VMcHBbVjc2dJtbFFUKs3zrF5Z0kceHz2oUH6eLRgPyHRPDxXRFrGw3p1bB6fdaKR+B6zG0IdhDVAPSs/w==\"}",
+    "posts": "SEA{\"m\":{\"c\":\"*\",\"w\":{\"*\":\"posts\",\"+\":\"*\"}},\"s\":\"aR/pTvTYHUvczpCu6NBMPBTilL23mOOvmMstJqoNQKSDRQ1dTxWblcjHaGIw0BANxZg9BahX3OB7UY2cauZqfA==\"}",
+    "chat": "SEA{\"m\":{\"c\":\"*\",\"w\":{\"*\":\"chat\",\"+\":\"*\"}},\"s\":\"lzYi5dou5mEssETRd6vr4wbnGIaHKc1pVyLpSgrC4Piv1gdYxreTwNUPZPDkTsxxS7xntecsdnKMwByQ3OhZOg==\"}",
+    "dict": "SEA{\"m\":{\"c\":\"*\",\"w\":{\"*\":\"dict\",\"+\":\"*\"}},\"s\":\"NL7kLrZcHMW/2KJMOFkRT2mcMMlZTqHNDERsbOkscUKht0lvlalVXQLucIzyTq18uMLmnTYSEqv/Md0ebChSzQ==\"}",
+    "projects": "SEA{\"m\":{\"c\":\"*\",\"w\":{\"*\":\"projects\",\"+\":\"*\"}},\"s\":\"RRKOD7+SY7LRcdNRe37c+qGat6ZiTCNIcTPmM0w12eJgPv0mUfM5403dL//wR687By9/iPYxMwskcIT4lfjDvQ==\"}",
+    "gifts": "SEA{\"m\":{\"c\":\"*\",\"w\":{\"*\":\"gifts\",\"+\":\"*\"}},\"s\":\"qFe5HEEKSKIo8pr9j00ddfjT3uHNblyQGBAwDqysSZ6mv1eI+aSO/O7qDgIRLqBZ2Wg2EI6RCgLqYWOcsy3NaA==\"}"
+  }
+}

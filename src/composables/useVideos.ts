@@ -1,5 +1,5 @@
 // import { computed, reactive, ref } from "vue";
-import { useGun, useUser } from "../gun-vue/composables";
+import { useGun, useUser } from "../gun-vue/composables/src";
 import { globalState } from "../stores/globalState"
 import { IVideo, IChannel } from "../types"
 import { prefers, videos } from "../stores"

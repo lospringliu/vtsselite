@@ -6,7 +6,7 @@ import Vue from '@vitejs/plugin-vue'
 import Pages from 'vite-plugin-pages'
 import Components from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite'
-import Layouts from 'vite-plugin-vue-layouts'
+// import Layouts from 'vite-plugin-vue-layouts'
 import LinkAttributes from 'markdown-it-link-attributes'
 import Markdown from 'vite-plugin-vue-markdown'
 import { VitePWA } from 'vite-plugin-pwa'
@@ -34,8 +34,9 @@ export default defineConfig({
   resolve: {
     alias: {
       '~/': `${path.resolve(__dirname, 'src')}/`,
-      '#composables': path.resolve(__dirname, 'src/gun-vue/composables'),
-      '#components': path.resolve(__dirname, 'src/gun-vue/components'),
+      '@src': `${path.resolve(__dirname, 'src')}`,
+      '#composables': path.resolve(__dirname, 'src/gun-vue/composables/src'),
+      '#components': path.resolve(__dirname, 'src/gun-vue/components/src'),
     },
   },
   plugins: [
@@ -55,7 +56,7 @@ export default defineConfig({
     }),
 
     // https://github.com/JohnCampionJr/vite-plugin-vue-layouts
-    Layouts(),
+    // Layouts(),
 
     // https://github.com/antfu/unplugin-auto-import
     AutoImport({
@@ -78,7 +79,7 @@ export default defineConfig({
 
     // https://github.com/antfu/vite-plugin-components
     Components({
-      dirs: ['src/components', 'src/gun-vue/components'],
+      dirs: ['src/components', 'src/gun-vue/components/src'],
       dts: true,
     }),
 

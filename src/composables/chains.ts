@@ -1,5 +1,5 @@
 import { getRandomElement } from "../api/utils"
-import { useUser } from "../gun-vue/composables"
+import { useUser } from "#composables"
 const { user } = useUser()
 
 export const chains = reactive({

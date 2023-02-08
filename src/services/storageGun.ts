@@ -13,7 +13,7 @@
 
 // read once, write many
 
-import { useUser } from "../gun-vue/composables"
+import { useUser } from "#composables"
 const { user } = useUser()
 
 export default class Storage {

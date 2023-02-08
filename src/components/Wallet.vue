@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useUser } from '../gun-vue/composables';
+import { useUser } from '#composables';
 import { default_chain_name, useWallet, useWallets } from '../composables/useWallet'
 import {
   Listbox,
