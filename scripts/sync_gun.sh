@@ -2,6 +2,7 @@
 
 rm -fr src/gun-vue/*
 cp -av /Users/xcliu/tests/gun-vue/src/* src/gun-vue
+mv src/gun-vue/account/AccountStars.vux src/gun-vue/account/AccountStars.vue || true
 git checkout src/gun-vue/room/rootRoom.json
 # sed -ibak 's|import "virtual:windi.css"|// import "virtual:windi.css"|' src/gun/components/index.js
 # rm -fv src/gun/components/index.jsback
