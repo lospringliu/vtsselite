@@ -35,8 +35,8 @@ export default defineConfig({
     alias: {
       '~/': `${path.resolve(__dirname, 'src')}/`,
       '@src': `${path.resolve(__dirname, 'src')}`,
-      '#composables': path.resolve(__dirname, 'src/gun-vue/composables/src'),
-      '#components': path.resolve(__dirname, 'src/gun-vue/components/src'),
+      '#composables': path.resolve(__dirname, 'src/gun-vue/composables'),
+      '#components': path.resolve(__dirname, 'src/gun-vue/components'),
     },
   },
   plugins: [
@@ -79,7 +79,7 @@ export default defineConfig({
 
     // https://github.com/antfu/vite-plugin-components
     Components({
-      dirs: ['src/components', 'src/gun-vue/components/src'],
+      dirs: ['src/components', 'src/gun-vue'],
       dts: true,
     }),
 

@@ -1,8 +1,8 @@
-import { useUser } from "../gun-vue/composables/src"
-import { chains } from "./chains"
+import { useUser } from '../gun-vue/composables'
+import { chains } from './chains'
 const { user } = useUser()
 const user_is = computed(() => user.is)
-export const default_chain_name = ref("jingtum")
+export const default_chain_name = ref('jingtum')
 export const default_chain = computed(() => chains[default_chain_name.value])
 
 const wallets = reactive({
@@ -12,7 +12,7 @@ export function useWallets() {
   Object.entries(chains).forEach(([chain_name, chain]) => {
     if (!wallets.hasOwnProperty(chain_name)) {
       wallets[chain_name] = {
-        address: "",
+        address: '',
         api: null,
         chain: chain_name,
         chainobj: chain,
@@ -20,13 +20,15 @@ export function useWallets() {
         balance_raw: {},
         querying: false,
         algorithm: chain.algorithm,
-        endpoints: chain.endpoints
+        endpoints: chain.endpoints,
       }
     }
     const wallet = wallets[chain_name]
     wallet.initiated = computed(() => wallet.address && wallet.api)
-    if (wallet.stop_watch_auth) { wallet.stop_watch_auth() }
-    if (wallet.stop_watch_address) { wallet.stop_watch_address() }
+    if (wallet.stop_watch_auth)
+      wallet.stop_watch_auth()
+    if (wallet.stop_watch_address)
+      wallet.stop_watch_address()
     wallet.stop_watch_auth = watch(user_is, () => {
       if (!user_is) {
         wallet.address = ''
@@ -34,24 +36,23 @@ export function useWallets() {
       }
     })
     wallet.stop_watch_address = watch(user.wallets, () => {
-      if (!wallet.address && user.wallets?.[chain_name]?.address) {
+      if (!wallet.address && user.wallets?.[chain_name]?.address)
         wallet.address = user.wallets[chain_name].address
-      }
-      if (!wallet.activated && user.wallets?.[chain_name]?.activated) {
+
+      if (!wallet.activated && user.wallets?.[chain_name]?.activated)
         wallet.activated = user.wallets[chain_name].activated
-      }
     })
   })
   return {
     wallets,
-    chains
+    chains,
   }
 }
 
 export function useWallet(chain_name = default_chain_name.value) {
-  if (!wallets.hasOwnProperty(chain_name)) {
+  if (!wallets.hasOwnProperty(chain_name))
     useWallets()
-  }
+
   return wallets[chain_name]
 }
 

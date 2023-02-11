@@ -1,7 +1,7 @@
 import { createApp } from 'vue'
 import { createRouter, createWebHashHistory } from 'vue-router'
 import generatedRoutes from 'virtual:generated-pages'
-import { setupLayouts } from 'virtual:generated-layouts'
+// import { setupLayouts } from 'virtual:generated-layouts'
 import { pinia } from './stores'
 import App from './App.vue'
 import { GunVuePlugin } from '#components'
@@ -10,18 +10,17 @@ import { currentRoom } from '#composables'
 import '@unocss/reset/tailwind.css'
 // import './styles/main.css'
 import 'uno.css'
-import '#components/styles/index.css'
+import './gun-vue/styles/index.css'
 // import './styles/styles.scss'
 
 // const routes = setupLayouts(generatedRoutes)
-import routes from "~pages"
+import routes from '~pages'
 const router = createRouter({
   history: createWebHashHistory(import.meta.env.BASE_URL),
   routes,
   scrollBehavior(to, from, savedPosition) {
     if (savedPosition)
       return savedPosition
-
     else
       return { top: 0, behavior: 'smooth' }
   },
